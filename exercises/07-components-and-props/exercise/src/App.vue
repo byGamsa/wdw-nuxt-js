@@ -1,6 +1,5 @@
 <script setup>
   import Sidebar from './components/Sidebar.vue'
-  import PostList from './components/PostList.vue'
 
   import { ref } from 'vue'
   import avatarImage from '/hdmLogo.jpg'
@@ -33,6 +32,7 @@ Impressum: www.hdm-stuttgart.de/impressum`)
     stats.value.followers += isFollowing.value ? 1 : -1
   }
 
+  // Start coding here!
   const selectedPost = ref(null)
 
   function openPost(post) {
@@ -93,8 +93,18 @@ Impressum: www.hdm-stuttgart.de/impressum`)
           </div>
         </div>
 
-        <!-- PostList-Komponente -->
-        <PostList :posts="posts" @select-post="openPost" />
+        <div class="posts">
+          <p v-if="posts.length === 0">Noch keine Beiträge vorhanden</p>
+          <div v-else class="post-list">
+            <div v-for="post in posts" :key="post.id" class="post-card" @click="openPost(post)">
+              <img :src="post.imageUrl" :alt="post.title"/>
+              <div class="post-info">
+                <span class="title">{{ post.title }}</span>
+                <span class="likes">{{ post.likes }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <!-- Overlay-Container -->
         <div v-if="selectedPost" class="overlay" @click.self="closePost">
