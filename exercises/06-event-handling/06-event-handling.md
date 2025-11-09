@@ -32,4 +32,3 @@ Die CSS- und HTML-Struktur ist also schon da – du sollst **nur die Logik** imp
 
 ## Challenge
 - Füge später eine zusätzliche Logik hinzu, sodass man auch durch Klicken außerhalb des Bildes das Overlay schließen kann.
-  (Tipp: `@click.self="closePost()"` am Overlay-Div.)
