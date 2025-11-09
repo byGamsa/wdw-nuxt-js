@@ -1,0 +1,126 @@
+<script setup>
+  import Sidebar from './components/Sidebar.vue'
+
+  import { ref } from 'vue'
+  import avatarImage from '/hdmLogo.jpg'
+
+  const username = ref('hdm.stuttgart')
+  const fullname = ref('Hochschule der Medien (HdM)')
+  const stats = ref({
+    posts: 0,
+    followers: 15300,
+    following: 134
+  })
+  const description = ref(`Offizieller Instagram-Account der #hdmstuttgart 📱
+Hinweise: www.hdm-stuttgart.de/datenschutz#instagram
+Impressum: www.hdm-stuttgart.de/impressum`)
+
+  const avatarImageRef = ref(avatarImage)
+
+  const socialLink  = ref('https://www.hdm-stuttgart.de/quicklinks/')
+
+  const isFollowing = ref(true)
+
+  const posts = ref([
+  { id: 1, title: 'Neuer Rektor an der HdM!🎓✨', likes: 42, imageUrl: 'https://i.imgur.com/j5nf5PX.jpeg' },
+  { id: 2, title: 'Herzlich Willkommen an der HdM, liebe Erstis! 🐥', likes: 27, imageUrl: 'https://i.imgur.com/0DOWte3.jpeg' },
+  { id: 3, title: 'Wir sind live!🥳', likes: 88, imageUrl: 'https://i.imgur.com/LiKWF4M.jpeg' }
+  ])
+
+  function toggleFollow() {
+    isFollowing.value = !isFollowing.value
+    stats.value.followers += isFollowing.value ? 1 : -1
+  }
+
+  const selectedPost = ref(null)
+
+  // Start coding here!
+
+</script>
+
+<template>
+  <div class="app">
+    <!-- Sidebar -->
+    <Sidebar />
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <section class="profile">
+
+        <div class="profile-info">
+          <div class="profile-header">
+            <img v-bind:src="avatarImageRef" alt="Profilbild" class="avatar" />
+
+            <div class="text-info">
+              <h2 class="username">{{ username }}</h2>
+              <p class="fullname">{{ fullname }}</p>
+
+              <div class="stats">
+                <span><strong>{{ stats.posts }}</strong> Beiträge</span>
+                <span><strong>{{ stats.followers }}</strong> Follower</span>
+                <span><strong>{{ stats.following }}</strong> Gefolgt</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="description">
+            {{ description }}
+          </div>
+
+          <a v-bind:href="socialLink" target="_blank" class="social-link">
+            www.hdm-stuttgart.de/quicklinks
+          </a>
+
+          <div class="action-buttons">
+            <button v-if="!isFollowing" class="follow-btn" @click="toggleFollow()">
+              Folgen
+            </button>
+
+            <button v-else class="unfollow-btn" @click="toggleFollow()">
+              Gefolgt
+            </button>
+
+            <button  v-show="isFollowing" class="message-btn" >
+              Nachricht senden
+            </button>
+          </div>
+        </div>
+
+        <div class="posts">
+          <p v-if="posts.length === 0">Noch keine Beiträge vorhanden</p>
+          <div v-else class="post-list">
+            <div v-for="post in posts" :key="post.id" class="post-card">
+              <img :src="post.imageUrl" :alt="post.title"/>
+              <div class="post-info">
+                <span class="title">{{ post.title }}</span>
+                <span class="likes">{{ post.likes }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Overlay-Container -->
+        <div v-if="selectedPost" class="overlay">
+          <div class="overlay-box">
+            <div class="overlay-image">
+              <img :src="selectedPost.imageUrl" :alt="selectedPost.title" />
+            </div>
+
+            <div class="overlay-side">
+              <header class="overlay-header">
+                <img :src="avatarImageRef" alt="Profilbild" class="overlay-avatar" />
+                <h3 class="overlay-username">{{ username }}</h3>
+                <button class="close-btn">×</button>
+              </header>
+
+              <div class="overlay-content">
+                <p class="overlay-title">{{ selectedPost.title }}</p>
+                <p class="overlay-likes">{{ selectedPost.likes }} ❤</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</template>

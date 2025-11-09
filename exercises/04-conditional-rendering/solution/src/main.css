@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #000;
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+  background: #000;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Hauptbereich */
+.main-content {
+  flex: 1;
+  padding: 2rem 3rem;
+  overflow-y: auto;
+}
+
+/* Profil */
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #333;
+}
+
+.username {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.fullname {
+  color: #aaa;
+  letter-spacing: 1px;
+}
+
+.stats {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.description {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #fff;
+  font-style: italic;
+  line-height: 1.4;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.text-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.social-link {
+  display: inline-block;
+  font-size: 0.95rem;
+  color: #3399ff;
+  text-decoration: none;
+}
+
+.social-link:hover {
+  text-decoration: underline;
+}
+
+/* --- Buttons --- */
+.action-buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.follow-btn,
+.unfollow-btn,
+.message-btn {
+  padding: 0.7rem 1.8rem;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  background-color: #1f1f1f;
+  color: #fff;
+  border: 1px solid #2f2f2f;
+  min-width: 180px;
+  justify-content: center;
+}
+
+.follow-btn:hover,
+.unfollow-btn:hover,
+.message-btn:hover {
+  background-color: #2a2a2a;
+}
+
+/* --- Post-Bereich --- */
+.posts {
+  width: 100%;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #2f2f2f;
+  text-align: center;
+  color: #999;
+  font-size: 0.95rem;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.posts h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.posts p {
+  color: #aaa;
+  margin: 0;
+  font-style: italic;
+}
