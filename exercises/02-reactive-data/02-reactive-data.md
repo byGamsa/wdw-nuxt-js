@@ -12,4 +12,4 @@ Deine Anwendung enthält bereits:
 1. Definiere im `<script setup>`-Bereich eine neue reaktive Variable namens `bio` mit `ref()`.
 2. Diese Variable soll einen kurzen Beschreibungstext (Bio) des Benutzers enthalten.
 3. Binde diese bio-Variable im Template unterhalb der Statistik ein. Verwende dafür ein `p` Element.
-4. Verwende für das neue Element die CSS-Klasse `description`.
+4. Verwende für das neue Element die CSS-Klasse `bio`.

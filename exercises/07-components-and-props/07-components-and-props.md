@@ -1,4 +1,4 @@
-# 07 – Komponenten II: PostOverlay auslagern
+# 07 – Components and Props
 
 ## Ziel
 In dieser Übung lernst du, wie man wiederverwendbare Komponenten erstellt und mit **Props** und **Events** zwischen Parent und Child kommuniziert.

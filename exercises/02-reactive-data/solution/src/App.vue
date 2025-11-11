@@ -10,7 +10,7 @@
     followers: 15300,
     following: 134
   })
-  const description = ref(`Offizieller Instagram-Account der #hdmstuttgart 📱
+  const bio = ref(`Offizieller Instagram-Account der #hdmstuttgart 📱
 Hinweise: www.hdm-stuttgart.de/datenschutz#instagram
 Impressum: www.hdm-stuttgart.de/impressum`)
 
@@ -36,7 +36,7 @@ Impressum: www.hdm-stuttgart.de/impressum`)
           </div>
 
           <div class="description">
-            {{description}}
+            {{bio}}
           </div>
 
         </div>
