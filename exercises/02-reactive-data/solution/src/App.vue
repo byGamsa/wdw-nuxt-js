@@ -35,9 +35,7 @@ Impressum: www.hdm-stuttgart.de/impressum`)
             <span><strong>{{stats.following}}</strong> Gefolgt</span>
           </div>
 
-          <div class="description">
-            {{bio}}
-          </div>
+          <p class="bio">{{bio}}</p>
 
         </div>
       </section>
