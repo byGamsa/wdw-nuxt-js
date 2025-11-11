@@ -1,4 +1,4 @@
-# 11 – Forms & v-model
+# 08 – Forms & v-model
 
 ## Ziel
 In dieser Übung lernst du, wie du Formulare mit **`v-model`** in Vue erstellst
