@@ -49,7 +49,9 @@ Nach Abschluss dieser Aufgabe hast du eine funktionsfähige Grundstruktur, auf d
     -   **components/** -- enthält wiederverwendbare UI-Komponenten
 
 6.  **Projektdateien übertragen**\
-    Übertrage nun die bereitgestellten components aus `08-forms-and-v-model/solutions/src/components` in den neu angelegten components Ordner
+    Übertrage nun die bereitgestellten components aus `app/assets` in den neu angelegten components Ordner
+
+    - Sidebar, PostOverlay, PostList (sowohl .vue als auch .css)
 
 7.  **Weiteres Setup**
 
@@ -66,23 +68,15 @@ Nach Abschluss dieser Aufgabe hast du eine funktionsfähige Grundstruktur, auf d
         <Sidebar />
 
         <!-- Hauptinhalt -->
-        <NuxtPage />
-
-        <!-- Footer -->
-        <footer class="footer">
-          Footer Bereich
-        </footer>
+        <NuxtPage /> 
       </div>
-    </template>
-
-    <script setup>
-      import Sidebar from '../components/Sidebar.vue'
-    </script>
+    </template> 
     ``` 
 
     ### 7.2 Seite für Homepage anlegen
 
-    Lege in `pages/` eine neue Datei **index.vue** an und füge den Inhalt aus `08-forms-and-v-model/solution/src/App.vue` hier ein
+    Lege in `pages/` eine neue Datei **index.vue** an und füge den Inhalt aus `app/assets/App.vue` hier ein.
+    Verschiebe auch die `app/assets/index.css` in `pages/`.
 
     ### 7.3 App.vue anpassen
 
