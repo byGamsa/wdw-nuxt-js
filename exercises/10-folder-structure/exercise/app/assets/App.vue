@@ -1,10 +1,6 @@
-<script setup>
-  import Sidebar from '../assets/Sidebar.vue'
-  import PostList from '../assets/PostList.vue'
-  import PostOverlay from '../assets/PostOverlay.vue'
-
+<script setup> 
   import { ref } from 'vue'
-  import avatarImage from '/hdmLogo.jpg'
+  import avatarImage from '../assets/hdmLogo.jpg'
 
   import './index.css'
 
